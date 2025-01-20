@@ -1,0 +1,209 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;  
+    padding: 0; 
+    background-color: rgb(255, 0, 208);
+    color: #b84a4add;
+    display: flex;
+    flex-direction: column; 
+    text-align: center;   
+}   
+
+header {
+    
+    text-align: center;
+    background-color: rgb(255, 0, 221);
+    
+} 
+
+
+.dynamic-header {   
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #c800e2, #e294cfbe, #941a6579); /* Gradiente llamativo */
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 3s ease-in-out;   
+    
+}
+
+.section {
+    padding: 20px;
+    text-align: center;
+}
+    
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;     
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animación de texto deslizante */
+@keyframes textSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Efecto pulsante para el nombre */
+@keyframes pulse {
+    0%, 100% {
+        text-shadow: 0 0 10px #fcb045, 0 0 20px #fd1d1d;
+    }
+    50% {
+        text-shadow: 0 0 20px #fd1d1d, 0 0 30px #833ab4;
+    }
+}
+
+.header-content h1 {
+    font-family: 'Playfair Display', serif !important;
+    font-style: italic;
+    font-size: 500% ;
+    color: rgb(31, 5, 5);
+    margin: 5px 0;
+    animation: textSlide 1.5s ease-in-out forwards;
+}
+
+.header-content p {
+    font-size: 300%;
+    margin: 10px 0; 
+    animation: fadeIn 4s ease-in-out;
+    color: rgb(31, 5, 5); 
+    font-family: 'Lobster', cursive !important;
+    line-height: 1.3;
+    letter-spacing: 1px;     
+    
+}
+
+
+
+/* Estilo para resaltar el nombre */
+.highlight {
+    color: rgb(211, 47, 47);
+    font-weight: bold;
+    animation: pulse 2s infinite;
+}
+
+
+.gallery {
+    padding: 20px;
+    color: #07384b;
+    font-size: 130% ;
+    position: relative;
+    animation: fadeIn 5s ease-in-out;
+    
+       
+}
+/* Contenedor del carrusel que mantiene las imágenes en fila */
+.carousel {
+    overflow: hidden; /* Oculta el desbordamiento */
+    width: 100%; /* Ajusta al tamaño disponible */    
+    position: relative;
+    margin: 0 auto;
+    max-width: 700px;    
+    display: flex;
+    
+     
+   }
+
+/* Trayectoria del carrusel: se colocan las imágenes en una fila */
+.carousel-track {
+    
+    display: flex; /* Esto organiza las imágenes en fila */    
+    transition: transform 0.5s ease-in-out;
+    margin: 0 auto;
+    align-items:center;  
+}
+
+/* Estilo de cada imagen */
+.carousel-track img {
+    width: 300px;
+    max-width: 600px;
+    margin: 0 10px;
+    transition: transform 0.5s ease, opacity 0.8s ease;
+    
+}
+
+.carousel-track img.active {
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.carousel-track img:not(.active) {
+    transform: scale(0.8);
+    opacity: 0.5;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 5px;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+/* Animación del deslizamiento de las imágenes */
+@keyframes slideImages {
+    0% {
+        transform: translateX(0); /* Inicia en la posición inicial */
+    }
+    100% {
+        transform: translateX(-100%); /* Mueve las imágenes a la izquierda */
+    }
+}
+
+.bautizo {
+    text-align: center;
+    font-family: 'Playfair Display', serif !important;
+    font-style: italic;
+    font-size: 100% ;
+    color: rgb(31, 5, 5);
+    margin: 5px 0;
+    background-color: rgb(255, 255, 255);
+    animation: fadeIn 5s ease-in-out;
+    
+}
+
+.rsvp-form input, .rsvp-form button {
+    padding: 10px;
+    margin: 5px;
+    width: 80%;
+    max-width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+.rsvp-form button {
+    background-color: #d63384;
+    color: white;
+    cursor: pointer;
+}
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #ffe6e6;
+    margin-top: 20px;
+}
